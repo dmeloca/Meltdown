@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil</title>
+<!--  <link rel="stylesheet" href="/static/estilos.css">-->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .profile-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 30px 20px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 15px 0;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 40px;
+    }
+
+    .main-content h1 {
+      color: #6a11cb;
+      margin-bottom: 20px;
+    }
+
+    .profile-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .profile-card h3 {
+      margin-top: 0;
+      color: #6a11cb;
+    }
+
+    .profile-card p {
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #6a11cb;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #2575fc;
+    }
+  </style>
+</head>
+<body>
+<div class="profile-container">
+  <div class="sidebar">
+    <h2>Mi Dashboard</h2>
+    <a href="/dashboard">Inicio</a>
+    <a href="/dashboard/profile">Perfil</a>
+    <a href="/dashboard/settings">Configuración</a>
+    <a href="/logout">Cerrar sesión</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Mi Perfil</h1>
+
+    <div class="profile-card">
+      <h3>Información personal</h3>
+      <p><strong>Nombre:</strong> {{ .Name }}</p>
+      <p><strong>Role: </strong> {{ .Role }} </p>
+      <p><strong>Username:</strong> {{ .Username }} </p>
+
+      <a href="/dashboard/settings" class="btn">Editar Perfil</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
